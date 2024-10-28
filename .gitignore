@@ -1,0 +1,14 @@
+# Node.js dependencies
+/node_modules
+
+# Compilación de TypeScript
+/dist
+
+# Archivos de configuración del entorno
+.env
+
+# Archivos de logs
+*.log
+
+# Archivos específicos de tu editor de código (por ejemplo, VSCode)
+.vscode/
