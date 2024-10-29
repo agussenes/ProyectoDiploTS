@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "titulo": "Producto de Ejemplo",
+    "descripcion": "Este es un producto de ejemplo.",
+    "precio": 100,
+    "imagen": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 2,
+    "titulo": "dadasdasd",
+    "descripcion": "dsaasdasdasdasd",
+    "precio": 5000,
+    "imagen": "hola"
+  },
+  {
+    "id": 3,
+    "titulo": "hola",
+    "descripcion": "324234234234234",
+    "precio": 234324234234,
+    "imagen": "24234234"
+  }
+]

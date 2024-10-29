@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Productos</title>
+    
+</head>
+
+<body>
+    <h1>Productos Disponibles</h1>
+    <ul>
+        <% products.forEach(product=> { %>
+            <li><strong>
+                    <%= product.titulo %>
+                </strong> - Precio: $<%= product.precio.toFixed(2) %>
+            </li>
+            <% }) %>
+    </ul>
+
+    <a href="/crear">Agregar un nuevo producto</a>
+</body>
+
+</html>
