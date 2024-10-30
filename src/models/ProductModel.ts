@@ -26,4 +26,29 @@ export class ProductoModelo {
         productos.push(producto);
         fs.writeFileSync(this.filePath, JSON.stringify(productos, null, 2));
     }
+
+    static editarProducto(productoActualizado: Producto): void {
+        const productos = this.cargarProductos();
+        const index = productos.findIndex((producto) => producto.id === productoActualizado.id);
+
+        if(index !== -1){
+            //actualiza el producto en el indice encontrado
+            productos[index] = productoActualizado;
+            fs.writeFileSync(this.filePath, JSON.stringify(productos, null, 2));
+        }else{
+            throw new Error("Producto no encontrado")
+        }
+    }
+
+    static eliminarProducto(id: number): void{
+        const productos = this.cargarProductos();
+        const productosActualizados = productos.filter(prod => prod.id !== id);
+
+        if (productosActualizados.length === productos.length){
+            throw new Error("Producto no encontrado");
+        }
+
+        fs.writeFileSync(this.filePath, JSON.stringify(productosActualizados, null, 2));
+    }
+
 }

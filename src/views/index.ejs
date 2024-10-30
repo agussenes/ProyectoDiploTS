@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Lista de Productos</title>
-    <link rel="stylesheet" href="/css/style.css">
-    
+  <title>Lista de Productos</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-    <h1>Productos Disponibles</h1>
-    <ul>
-        <% products.forEach(product=> { %>
-            <li><strong>
-                    <%= product.titulo %>
-                </strong> - Precio: $<%= product.precio.toFixed(2) %>
-            </li>
-            <% }) %>
-    </ul>
-
-    <a href="/crear">Agregar un nuevo producto</a>
+  <h1>Productos Disponibles</h1>
+  <ul>
+    <% products.forEach(product => { %>
+      <li>
+        <strong><%= product.titulo %></strong> - Precio: $<%= product.precio.toFixed(2) %>
+        <a href="/editar/<%= product.id %>">Editar</a>
+        <!-- Formulario para eliminar el producto -->
+        <form action="/eliminar/<%= product.id %>" method="POST" style="display:inline;">
+          <button type="submit">Eliminar</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+  <a href="/crear">Agregar un nuevo producto</a>
 </body>
-
 </html>
